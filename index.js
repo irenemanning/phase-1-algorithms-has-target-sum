@@ -1,17 +1,30 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        return true
+      } 
+    }
+  } 
 }
 
 /* 
   Write the Big O time complexity of your function here
+
+  quadratic 
+  0(n^2)
 */
 
 /* 
-  Add your pseudocode here
+  iterate through the array 
+  if the array contains two intergers that add to make the target,  return true
+  else return false
 */
 
 /*
-  Add written explanation of your solution here
+  this is returning true if two of the numbers in the array equal the target
+  my code is saying anything else is undefined :(  
 */
 
 // You can run `node index.js` to view these console logs
@@ -29,6 +42,7 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", hasTargetSum([1, 2, 5], 4));
+  console.log("=>",hasTargetSum([4, 2, 1], 8));
 }
 
 module.exports = hasTargetSum;
